@@ -39,6 +39,12 @@ export function WriteNowPage() {
                 {errors?.destinationAddress?.message}
               </p>
             )}
+            {/* //Data */}
+            <label htmlFor="dueDate">Data</label>
+            <DateTimePicker name="dueDate" />
+            {errors?.dueDate?.message && (
+              <p className="error-text">{errors?.dueDate?.message}</p>
+            )}
             {/* //Assunto */}
             <label htmlFor="subject">Assunto:</label>
             <input {...register('subject')} type="text" />
