@@ -7,7 +7,6 @@ const WriteNowValidationSchema = yup.object({
     .string()
     .email('Preencha um e-mail válido')
     .required('Preencha o e-mail'),
-  dueDate: yup.string().required('Insira a data de envio'),
   subject: yup.string().required('Digite o assunto do email'),
   body: yup.string().required('Insira o conteúdo do e-mail'),
 });
