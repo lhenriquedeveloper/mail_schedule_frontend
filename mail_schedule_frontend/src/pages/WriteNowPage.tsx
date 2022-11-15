@@ -4,6 +4,7 @@ import { Nav } from '../components/Nav/Nav';
 import { IWriteForm } from '../interfaces/IWriteNowForm';
 import { WriteNowResolver } from '../validations/WriteNowValidation';
 import emailjs from 'emailjs-com';
+import { toast } from 'react-toastify';
 
 export function WriteNowPage() {
   const formMethods = useForm<IWriteForm>({ resolver: WriteNowResolver });
@@ -23,10 +24,11 @@ export function WriteNowPage() {
       )
       .then(
         (result) => {
-          alert('Message Sent, We will get back to you shortly');
+          toast.success('Email enviado com sucesso!');
           console.log(result);
         },
         (error) => {
+          toast.error('Erro ao enviar email!');
           console.log(error.text);
         }
       );
