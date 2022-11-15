@@ -1,4 +1,9 @@
 import AppRoutes from './routes';
+import { AppContext } from './contexts/index';
 export default function App() {
-  return <AppRoutes />;
+  return (
+    <AppContext>
+      <AppRoutes />
+    </AppContext>
+  );
 }
